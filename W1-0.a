@@ -1,0 +1,34 @@
+; This program reads in integers and adds them together
+; until a negative number is read in.  Then it outputs
+; the sum (not including the last number).
+
+loadAee 0 ; load value 0 in aee register
+
+Start:	read		; read n -> acc
+	jmpn  Done  	; jump to Done if n < 0.
+	add   sum  	; add sum to the acc
+	store sum 	; store the new sum
+	inc
+	jump  Start	; go back & read in next number
+Done:	
+	load  sum 	; load the final sum
+	write 		; write the final sum
+	load aee
+	write
+	stop  		; stop
+
+sum:	.data 2 0 ; 2-byte location where sum is stored
+
+
+
+
+
+
+
+
+
+
+
+
+
+
